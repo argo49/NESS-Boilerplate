@@ -1,8 +1,9 @@
+@echo off
 echo "Installing NPM dependecies defined in package.json..."
-npm install
+call npm install
 
 echo "Tidying up..."
-del /S /F .git
+del /S /F /Q .git
 del README.md
 del scss\mixins\README.md
 del scss\modules\README.md
@@ -12,5 +13,6 @@ git init
 git add . -A
 git commit -m "Initial Commit"
 
-echo "Done. Goodbye cruel world!"
+echo "Done. Now get coding!"
+echo "https://github.com/argo49/NESS-Boilerplate"
 start /b "" cmd /c del "%~f0"&exit /b
